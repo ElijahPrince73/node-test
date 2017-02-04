@@ -11,6 +11,19 @@ expect(res).toBe(44).toBeA('number')
   // }
 });
 
+it('Should async add two numbers' , (done) =>{
+  utils.asyncAdd(2,3, (sum) =>{
+    expect(sum).toBe(5).toBeA("number");
+    done();
+  })
+})
+
+it("shoulf asyncSquare a number" , (done) =>{
+  utils.asyncSquare(5 , (res) =>{
+  expect(res).toBe(25).toBeA("number");
+  done();
+  });
+});
 
 it('Should square a number' , () => {
   var res = utils.square(4)
